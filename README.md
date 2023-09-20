@@ -1,4 +1,5 @@
 ﺏ
+![logo](https://github.com/ITU-GammaTeam/GammaSwarm-Demo/src/GammaSwarm/src/GammaSwarm/logging/logo.png?raw=true)
 # GammaSwarm-Demo 
  The 2022 Gamma Team Integrated Swarm System Repository Reduced In Scope for any number of Drones Takeoff-Loiter-2D Formation and Navigation Flight with CrazyFlie 2.1 Drones. It is open to development and its usability has been confirmed in swarm studies. For more information please look at wiki of this project! 
 
