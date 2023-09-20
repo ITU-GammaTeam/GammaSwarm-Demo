@@ -24,7 +24,7 @@ Download the package with git clone or from IDE.
 
 ```
 cd catkin_ws
-git clone https://github.com/imamim/MinSnap-CrazyFlie2.1.git
+git clone https://github.com/ITU-GammaTeam/GammaSwarm-Demo.git
 ```
 
 Then run the `catkin_make` command at main directory.
