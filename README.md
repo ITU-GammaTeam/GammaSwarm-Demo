@@ -84,8 +84,11 @@ For V1.0 of system, you can use this 1 line code (After Setup Process you can do
 roslaunch GammaSwarm allRun.launch
 ```
 
-If you want configure of mission parameter please refer this 2 code which that given relative path!
-
+If you want configure of mission parameter please refer this code:
+```
+src/GammaSwarm/src/GammaSwarm/mainSystem/mission.py
+```
+For more information about all parameters please refer this 2 code which that given relative path!
 ```
 src/GammaSwarm/src/GammaSwarm/mainSystem/Parameters.py
 src/GammaSwarm/src/GammaSwarm/simulationSystems/SimulationParameter.py
