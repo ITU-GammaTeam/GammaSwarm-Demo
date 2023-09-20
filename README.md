@@ -14,9 +14,11 @@ EKLENECEK.
 EKLENECEK.
 
 # Dependencies
+This repository was developed on Ubuntu 20.04 and all tests were performed in this environment with ROS Noetic. The system is built on the ROS Noetic version. It is recommended to use the following configurations:
 ```
 Ubuntu 20.04
-ROS Noetic : http://wiki.ros.org/noetic/Installation/Ubuntu
+ROS Noetic :
+http://wiki.ros.org/noetic/Installation/Ubuntu
 ```
 And other libraries:
 ```
