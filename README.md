@@ -13,6 +13,18 @@ EKLENECEK.
 <a id="3">[3]</a> 
 EKLENECEK.
 
+# Dependencies
+```
+Ubuntu 20.04
+ROS Noetic : http://wiki.ros.org/noetic/Installation/Ubuntu
+```
+And other libraries:
+```
+pip3 install shapely
+pip3 install rtree
+pip3 install plotly
+```
+
 # Setup 
 Firs create folder with name:
 ```
@@ -64,12 +76,7 @@ source /home/Your_Computer_username/catkin_ws/GammaSwarm/devel/setup.bash
 ```
 
 Configure all of the dependencies of PyBullet
-# Dependencies
-```
-pip3 install shapely
-pip3 install rtree
-pip3 install plotly
-```
+
 
 ## Starting System
 For V1.0 of system, you can use this 1 line code (After Setup Process you can do this):
