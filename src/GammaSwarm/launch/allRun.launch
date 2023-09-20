@@ -1,0 +1,8 @@
+<launch>
+    <!--node name="GammaLogger" pkg="GammaSwarm" type="gammaLogger.py" output="screen"/-->    
+    <node name="RealSwarmSystem" pkg="GammaSwarm" type="realExecuter.py" output="screen"/> 
+    <node name="SimulationSwarmSystem" pkg="GammaSwarm" type="simulationExecuter.py" output="screen"/>
+    <node name="MainSystem" pkg="GammaSwarm" type="mission.py" output="screen"/> 
+    <!--rosparam command="load" file="$(find GammaSwarm)/launch/crazyflies.yaml" param="crazyflies"/-->
+
+</launch>
