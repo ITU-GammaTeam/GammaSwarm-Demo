@@ -73,11 +73,8 @@ source /opt/ros/noetic/setup.bash
 
 And add this two line you last line of .bashrc file:
 ```
-source /home/Your_Computer_username/catkin_ws/crazyswarm/ros_ws/devel/setup.bash
 source /home/Your_Computer_username/catkin_ws/GammaSwarm/devel/setup.bash
 ```
-
-Configure all of the dependencies of PyBullet
 
 
 ## Starting System
