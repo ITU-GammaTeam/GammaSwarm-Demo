@@ -1,6 +1,6 @@
 ﺏ
-# MinSnap-CrazyFlie2.1   
- The 2022 Gamma Team Integrated Swarm System Repository Reduced In Scope for 1 Drone Navigation Flight. It is open to development and its usability has been confirmed in swarm studies.
+# GammaSwarm-Demo-CrazyFlie2.1   
+ The 2022 Gamma Team Integrated Swarm System Repository Reduced In Scope for n Drones Takeoff-Loiter-2D Formation and Navigation Flight. It is open to development and its usability has been confirmed in swarm studies. For more information please look at wiki of this project! 
 
 
 ## References
