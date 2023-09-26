@@ -128,11 +128,11 @@ modeList = [
             {MISSIONMODES.take_off    :      TakeoffParams(takeoff_height = 1.0 ,threshold = 0.08)} , 
             {MISSIONMODES.loiter      :      LoiterParams(loiter_time = 3)} ,
 
-            {MISSIONMODES.formation2D :      FormationParams2D(formation_type = FORMATIONTYPES.v,each_distance = 0.65,corner_count = 10,threshold=0.07)},
+            {MISSIONMODES.formation2D :      FormationParams2D(formation_type = FORMATIONTYPES.v,each_distance = 0.65,corner_count = 4,threshold=0.07)},
             {MISSIONMODES.loiter      :      LoiterParams(loiter_time = 3)},
             
             {MISSIONMODES.navigation  :      NavigationParams(agressiveness_kt = 30 ,max_velocity = 1, navigation_waypoints = [Position(1,1,1)], threshold = 0.08)},
-            {MISSIONMODES.formation2D :      FormationParams2D(formation_type = FORMATIONTYPES.v,each_distance = 0.65,corner_count = 10,threshold=0.07)},
+            {MISSIONMODES.formation2D :      FormationParams2D(formation_type = FORMATIONTYPES.v,each_distance = 0.65,corner_count = 4,threshold=0.07)},
             {MISSIONMODES.loiter      :      LoiterParams(loiter_time = 3)},
         
             {MISSIONMODES.landing     :      LandingParams(threshold = 0.07)},
@@ -164,7 +164,7 @@ modeList = [
   
 - Her mod arasına bir loiter eklenmelidir. Loiter zamanı çok fazla küçük olmadığı sürece istenilen değere ayarlanılabilir. ```{MISSIONMODES.loiter : LoiterParams(loiter_time = 3)} ,```
   
-- Artık kalkış bitti ve formasyona girebiliriz.  ```{MISSIONMODES.formation2D : FormationParams2D(formation_type = FORMATIONTYPES.v,each_distance = 0.65,corner_count = 10,threshold=0.07)} ,```
+- Artık kalkış bitti ve formasyona girebiliriz.  ```{MISSIONMODES.formation2D : FormationParams2D(formation_type = FORMATIONTYPES.v,each_distance = 0.65,corner_count = 4,threshold=0.07)} ,```
   
 - Formasyon tipimizi, her hava aracı arasında bulunması istenen mesafe (köşeler veya noktalar arası mesafe, köşegen mesafesi değil) değerinin ayarlanması bu görev için yeterlidir. Ayrıntılı açıklamalar için wiki'ye göz atabilirsiniz. (```formation_type = FORMATIONTYPES.v``` , ```each_distance = 0.65``` )
   
@@ -179,7 +179,7 @@ modeList = [
   
   **:one:** ```{MISSIONMODES.navigation : NavigationParams(agressiveness_kt = 30 ,max_velocity = 1, navigation_waypoints = [Position(1,1,1)], threshold = 0.08)},```
   
-  **:two:** ```{MISSIONMODES.formation2D : FormationParams2D(formation_type = FORMATIONTYPES.v,each_distance = 0.65,corner_count = 10,threshold=0.07)},```
+  **:two:** ```{MISSIONMODES.formation2D : FormationParams2D(formation_type = FORMATIONTYPES.v,each_distance = 0.65,corner_count = 4,threshold=0.07)},```
   
   **:three:** ```{MISSIONMODES.loiter : LoiterParams(loiter_time = 3)},```
 
