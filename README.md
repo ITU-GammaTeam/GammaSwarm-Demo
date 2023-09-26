@@ -96,10 +96,13 @@ roslaunch GammaSwarm allRun.launch
 ```
 
 If you want configure of mission parameter please refer this code:
+
 ```
 src/GammaSwarm/src/GammaSwarm/mainSystem/mission.py
 ```
+
 For more information about all parameters please refer this 2 code which that given relative path!
+
 ```
 src/GammaSwarm/src/GammaSwarm/mainSystem/Parameters.py
 src/GammaSwarm/src/GammaSwarm/simulationSystems/SimulationParameter.py
@@ -110,9 +113,12 @@ src/GammaSwarm/src/GammaSwarm/simulationSystems/SimulationParameter.py
 Bu başlık altında basit bir görev oluşturma örneği bulacaksınız. Her parametrenin nerede kullanıldığı ile alakalı ayrıntılı bilgi için lütfen wiki'yi inceleyiniz.
 Yapmak istediğimiz görevin isterleri şunlar olsun. Elimizde bulunan 4 adet hava aracını 1 metre yüksekliğe kaldırıp havada iki boyutlu V şeklinde bir formasyon almasını istiyoruz. Bu formasyon alındıktan sonra formasyonu koruyarak belli 1 noktaya navigasyon yapılması istenmektedir. Bu görevleri tamamladıktan sonra ise hava araçlarının inişi gerçekleştirilir. 
 
+_Open ```src/GammaSwarm/src/GammaSwarm/mainSystem/mission.py ```_
+
 ###### NOTE
 
 Her navigasyon öncesi sürünün bir formasyon şeklinde bulunması uçuş düzeni açısından çok önemlidir, formasyona girilmeden sürü halinde navigasyon yapılması tavsiye edilmez. Hava aracının tek başına navigasyon yapmasını istiyorsanız lütfen [Individual Navigation](https://github.com/imamim/minSnap-CrazyFlie2.1) kaynağına bakınız **:heavy_exclamation_mark:**
+
 
 #### Mode List
 
