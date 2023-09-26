@@ -196,17 +196,6 @@ Bütün görevlerdeki threshold değerlerinin konuya hakim değilseniz değişti
 
 ## Developing
 
-Bu kısım Türkçe anlatılacaktır!
-
-GammaSwarm System V1.0 için düzenlenebilinecek şeyler şunlardır:
-1- Mission.py içerisindeki modeList değişkeni:
-```
-src/GammaSwarm/src/GammaSwarm/mainSystem/Mission.py
-```
-2- Görev fonksiyonlarının yerine getirilmesi için izlenmesi gereken aşamalar şunlardır!
-
--Modes.py içerisine modu çalıştıracak yeni bir fonksiyon eklenmelidir. Nasıl bir yapıya sahip olacağı 'takeOff' fonksiyonunda görülmektedir.
--Ardından bu fonksiyon içerisinde kullanılacak merkezcil ve dağıtık fonksiyonlar 'uavClass.py' ve 'MerkezcilClass.py' içerisine eklenmelidir.
 
 
 ## References
