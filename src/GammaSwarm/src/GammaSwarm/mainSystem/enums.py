@@ -2,7 +2,16 @@
 
 class FORMATIONTYPES:
     common = "common"
-
+    star = "star"
+    v = "v"
+    crescent = "crescent"
+    line = "line"
+    rhombus = "rhombus"
+    intersquares = "intersquares"
+    random = "random"
+    triangle = "triangle"
+    square = "square"
+    pentagon = "pentagon"
 
 class MISSIONMODES:
     initialize = "initialize"

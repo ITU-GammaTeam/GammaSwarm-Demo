@@ -8,7 +8,7 @@ from scipy import optimize
 from copy import deepcopy
 
 from State import DesiredTrajectoryState
-from utils import cart2pol, pol12cart, principalAngle, Hessian, polyder, normalize, position_to_numpy
+from utils import cart2pol, pol12cart, principalAngle, rotate_points, Hessian, polyder, normalize, position_to_numpy
 import time
 import matplotlib.pyplot as plt
 
@@ -89,6 +89,40 @@ class FormationClass:
         nodes = self.point_eliminator(nodes,agent_number)
         return nodes
     
+    def star(self,base_center,agent_number,each_distance,corner_count):
+        points = []
+        center = np.array([base_center.x,base_center.y])
+        exter = self.cvx_polygon(math.ceil(corner_count/2),base_center,agent_number/2,each_distance*2)
+        inter = self.cvx_polygon(math.ceil(corner_count/2),base_center,agent_number/2,each_distance)
+        rotaded_nodes = rotate_points(inter,180,center=center)
+        rotaded_nodes = np.array(rotaded_nodes)
+        points = np.vstack([exter,rotaded_nodes])
+        points = self.point_eliminator(points,agent_number)
+        return points
+
+    def V(self,base_center,agent_number,each_distance):   #V formasyonu dianmik degil. 5 drone ile calisir
+        points = []
+        # triangle = self.cvx_polygon(corner_count,base_center,agent_number,each_distance)
+        triangle = self.cvx_polygon(3,base_center,9,each_distance)
+        b = np.array(triangle)
+        b = b[b[:, 0].argsort(kind='mergesort')]
+        points = b[4:]
+        points = self.point_eliminator(points,agent_number)
+        return points
+
+    def crescent(self,base_center,agent_number,each_distance):
+        points = []
+        distance = each_distance
+        anglebtwUAV = 300 / agent_number
+        referenceAngle = 360 / agent_number
+        equalAngle = (180 - referenceAngle) / 2
+        radius = distance * np.sin(np.radians(equalAngle)) / np.sin(np.radians(referenceAngle))
+        for i in range(agent_number):
+            x, y = pol12cart(radius, self.meanAngle + anglebtwUAV * i)
+            points.append([base_center.x + x, base_center.y + y, float(base_center.z)])
+        points = np.array(points)
+        return points
+    
     def FairMacar(self,uav_list,number_of_drones):
         positions = []
         for uav in uav_list:
@@ -110,6 +144,24 @@ class FormationClass:
     def generateFormationPoints(self,base_center,number_of_drones,formation_params):
         if formation_params.formation_type == FORMATIONTYPES.common:
             points = self.cvx_polygon(number_of_drones,base_center,number_of_drones,formation_params.each_distance)
+
+        if formation_params.formation_type == FORMATIONTYPES.triangle: 
+            points = self.cvx_polygon(3,base_center,number_of_drones,formation_params.each_distance)
+
+        if formation_params.formation_type == FORMATIONTYPES.square: 
+            points = self.cvx_polygon(4,base_center,number_of_drones,formation_params.each_distance)
+
+        if formation_params.formation_type == FORMATIONTYPES.pentagon:
+            points = self.cvx_polygon(5,base_center,number_of_drones,formation_params.each_distance)
+
+        if formation_params.formation_type == FORMATIONTYPES.crescent:
+            points = self.crescent(base_center,number_of_drones,formation_params.each_distance)
+
+        if formation_params.formation_type == FORMATIONTYPES.star:
+            points = self.star(base_center,number_of_drones,formation_params.each_distance,formation_params.corner_count)
+
+        if formation_params.formation_type == FORMATIONTYPES.v:
+            points = self.V(base_center,number_of_drones,formation_params.each_distance)
 
         self.formation_points = points
 
