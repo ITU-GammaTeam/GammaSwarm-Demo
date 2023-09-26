@@ -87,7 +87,7 @@ After that close current terminal and open new terminal.
 
 ## Starting System
 
-![](https://github.com/GammaSwarm-Demo/example.gif)
+<img src="https://github.com/ITU-GammaTeam/GammaSwarm-Demo/blob/main/example.gif" width="680">
 
 For V1.0 of system, you can use this 1 line code (After Setup Process you can do this):
 
