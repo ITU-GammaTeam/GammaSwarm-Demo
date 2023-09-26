@@ -1,5 +1,6 @@
 ﺏ
-![alt_text](https://github.com/ITU-GammaTeam/GammaSwarm-Demo/blob/main/logo.png)
+<img src="https://github.com/ITU-GammaTeam/GammaSwarm-Demo/blob/main/logo.png" width="720">
+
 
 # GammaSwarm-Demo 
 
