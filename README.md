@@ -85,12 +85,9 @@ source /home/Your_Computer_username/catkin_ws/GammaSwarm-Demo/devel/setup.bash
 
 After that close current terminal and open new terminal.
 
-
-# NOT: BURAYA SİMULASYON GIFI EKLENECEK STARTING SYSTEM ALTINA
-
-
-
 ## Starting System
+
+![](https://github.com/ITU-GammaTeam/GammaSwarm-Demo/blob/main/example.gif)
 
 For V1.0 of system, you can use this 1 line code (After Setup Process you can do this):
 
