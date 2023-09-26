@@ -160,9 +160,9 @@ modeList = [
 
 - Initialize mode will already be in the main source code. This mode should always be at the top of the list and only its parameters should be edited.
 
-- If we want to make our flight only in a simulation environment (```simulation_enabled = True``` , ```real_enabled = False``` )
+- If we want to make our flight only in a simulation environment (```simulation_enabled = True``` , ```real_enabled = False```)
   
-- If we want to make our flight only in its real application (```simulation_enabled = False``` , ```real_enabled = True``` )
+- If we want to make our flight only in its real application (```simulation_enabled = False``` , ```real_enabled = True```)
   
   **:heavy_exclamation_mark:** The situation where both real and simulation environments work simultaneously has not been implemented. 
   
