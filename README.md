@@ -1,7 +1,15 @@
 ﺏ
 ![alt_text](https://github.com/ITU-GammaTeam/GammaSwarm-Demo/blob/main/logo.png)
+
 # GammaSwarm-Demo 
- The 2022 Gamma Team Integrated Swarm System Repository Reduced In Scope for any number of Drones Takeoff-Loiter-2D Formation and Navigation Flight with CrazyFlie 2.1 Drones. It is open to development and its usability has been confirmed in swarm studies. For more information please look at wiki of this project! 
+
+The 2022 Gamma Team Integrated Swarm System Repository Reduced In Scope for any number of Drones Takeoff-Loiter-2D Formation and Navigation Flight with CrazyFlie 2.1 Drones. It is open to development and its usability has been confirmed in swarm studies. For more information please look at wiki of this project!
+
+
+**:heavy_exclamation_mark:_Or you can look Teknofest 2023 'Heterogeneous Swarm Robots Competition' Project Report at :two:nd place team_**
+
+:arrow_right:[Project Report](https://drive.google.com/file/d/1Wdwlqqi9w5jY0oGLyqyqK5ytAj6Xoze8/view?usp=sharing)
+
 
 
 ## References
@@ -14,7 +22,7 @@ EKLENECEK.
 <a id="3">[3]</a> 
 EKLENECEK.
 
-# Dependencies
+## Dependencies
 This repository was developed on Ubuntu 20.04 and all tests were performed in this environment with ROS Noetic. The system is built on the ROS Noetic version. It is recommended to use the following configurations:
 ```
 Ubuntu 20.04
@@ -28,7 +36,7 @@ pip3 install rtree
 pip3 install plotly
 ```
 
-# Setup 
+## Setup 
 Firs create folder with name:
 ```
 cd
@@ -114,7 +122,7 @@ https://github.com/utiasDSL/gym-pybullet-drones
 ## PIP 
 https://pip.pypa.io/en/stable/ 
 
-# General Use
+### General Use
 --> Use launch files to configure standardized packages 
 
 --> Do not use any recursive or try-expect function 
@@ -124,7 +132,7 @@ https://pip.pypa.io/en/stable/
 --> Before every push, make sure that you did pull 
 
 
-# General Structure
+### General Structure
 ```bash
 Gamma Swarm
 ├── CMakeLists.txt
