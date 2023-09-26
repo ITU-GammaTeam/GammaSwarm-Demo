@@ -17,18 +17,10 @@ with _CrazyFlie 2.1_ drones. It is open to development and its usability has bee
 **Or you can look Teknofest 2023 Heterogeneous Swarm Robots Competition _[Project Report](https://drive.google.com/file/d/1Wdwlqqi9w5jY0oGLyqyqK5ytAj6Xoze8/view?usp=sharing)_ 
 at :two:nd place team:heavy_exclamation_mark:**
 
+## Installation
 
-## References
-<a id="1">[1]</a> 
-EKLENECEK.
+### Dependencies
 
-<a id="2">[2]</a> 
-EKLENECEK.
-
-<a id="3">[3]</a> 
-EKLENECEK.
-
-## Dependencies
 This repository was developed on Ubuntu 20.04 and all tests were performed in this environment with ROS Noetic. The system is built on the ROS Noetic version. It is recommended to use the following configurations:
 ```
 Ubuntu 20.04
@@ -42,7 +34,7 @@ pip3 install rtree
 pip3 install plotly
 ```
 
-## Setup 
+### Setup 
 Firs create folder with name:
 ```
 cd
@@ -92,6 +84,10 @@ source /home/Your_Computer_username/catkin_ws/GammaSwarm/devel/setup.bash
 ```
 
 
+# NOT: BURAYA SİMULASYON GIFI EKLENECEK STARTING SYSTEM ALTINA
+
+
+
 ## Starting System
 For V1.0 of system, you can use this 1 line code (After Setup Process you can do this):
 
@@ -121,6 +117,17 @@ src/GammaSwarm/src/GammaSwarm/mainSystem/Mission.py
 
 -Modes.py içerisine modu çalıştıracak yeni bir fonksiyon eklenmelidir. Nasıl bir yapıya sahip olacağı 'takeOff' fonksiyonunda görülmektedir.
 -Ardından bu fonksiyon içerisinde kullanılacak merkezcil ve dağıtık fonksiyonlar 'uavClass.py' ve 'MerkezcilClass.py' içerisine eklenmelidir.
+
+
+## References
+<a id="1">[1]</a> 
+EKLENECEK.
+
+<a id="2">[2]</a> 
+EKLENECEK.
+
+<a id="3">[3]</a> 
+EKLENECEK.
 
 ## PyBullet 
 https://github.com/utiasDSL/gym-pybullet-drones 
