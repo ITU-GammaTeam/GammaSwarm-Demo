@@ -3,7 +3,15 @@
 
 # GammaSwarm-Demo 
 
-The 2022 Gamma Team Integrated Swarm System Repository Reduced In Scope for any number of Drones Takeoff-Loiter-2D Formation and Navigation Flight with CrazyFlie 2.1 Drones. It is open to development and its usability has been confirmed in swarm studies. For more information please look at wiki of this project!
+The 2022 Gamma Team Integrated Swarm System Repository reduced in scope for any number of drones for actions:
+
+- Takeoff 
+- Loiter
+- 2D Formation 
+- Navigation Flight
+- Landing
+
+with _CrazyFlie 2.1_ drones. It is open to development and its usability has been confirmed in swarm studies. For more information please look at wiki of this project.
 
 
 **:heavy_exclamation_mark:_Or you can look Teknofest 2023 'Heterogeneous Swarm Robots Competition' Project Report at :two:nd place team_**
