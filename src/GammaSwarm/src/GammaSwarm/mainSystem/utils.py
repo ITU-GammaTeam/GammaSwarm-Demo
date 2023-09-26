@@ -75,7 +75,33 @@ def line_intersect(p1, p2, p3, p4):
 
     return True
 
+def rotate_points(points,rotation_angle,center=[0,0],clockwise=False,around="z"):
+    if around == "z":
+        idx1,idx2= 0,1
+    if around == "y":
+        idx1,idx2 = 0,2
+    if around == "x":
+        idx1,idx2 = 1,2
 
+    rotated_points = []
+    for i in points:
+        r,phi = cart2pol(i[idx1]-center[idx1],i[idx2]-center[idx2])
+        if clockwise:
+            x,y = pol12cart(r,phi-rotation_angle)
+        else:
+            x,y = pol12cart(r,phi+rotation_angle)
+        x+=center[idx1]
+        y+=center[idx2]
+        if around == "z":
+            rotated_points.append([x,y,i[2]])
+        if around == "y":
+            rotated_points.append([x,i[1],y])
+        if around == "x":
+            rotated_points.append([i[0],x,y])
+    if len(rotated_points)==1:
+        rotated_points = rotated_points[0]
+
+    return rotated_points
 
 ##########################     TRAJECTORY GENERATION UTILS   ###############################################
 def normalize(v):

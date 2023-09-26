@@ -17,23 +17,23 @@ def reason():
 modeList = [
             #TODO Simulation does not work with 1 agent, this mainSystem can work 1 drone but we have problem at simulation. Can't render drone.
             #For information of parameters pls look at Parameters.py
-            {MISSIONMODES.initialize  :      InitializerParams(number_of_agent = 2,simulation_enabled = True,real_enabled = False, starting_formation = FORMATIONTYPES.common, area_dimension = [(-1.6, 1.6), (-1.9, 1.9), (0, 1.5)])},
-            {MISSIONMODES.take_off    :      TakeoffParams(takeoff_height = 0.7 ,threshold = 0.08)} , 
+            {MISSIONMODES.initialize  :      InitializerParams(number_of_agent = 4,simulation_enabled = True,real_enabled = False, starting_formation = FORMATIONTYPES.common, area_dimension = [(-1.6, 1.6), (-1.9, 1.9), (0, 1.5)])},
+            
+            {MISSIONMODES.take_off    :      TakeoffParams(takeoff_height = 1.0 ,threshold = 0.08)} , 
             {MISSIONMODES.loiter      :      LoiterParams(loiter_time = 3)} ,
 
-            {MISSIONMODES.formation2D :      FormationParams2D(formation_type = FORMATIONTYPES.common,each_distance = 0.85,corner_count = 10,threshold=0.07)},
-            {MISSIONMODES.loiter      :      LoiterParams(loiter_time = 1)},
+            {MISSIONMODES.formation2D :      FormationParams2D(formation_type = FORMATIONTYPES.v,each_distance = 0.65,corner_count = 4,threshold=0.07)},
+            {MISSIONMODES.loiter      :      LoiterParams(loiter_time = 3)},
             
-            {MISSIONMODES.navigation  :      NavigationParams(agressiveness_kt = 30 ,max_velocity = 1, navigation_waypoints = [Position(1,1,0.7)], threshold = 0.08)},
-            {MISSIONMODES.formation2D :      FormationParams2D(formation_type = FORMATIONTYPES.common,each_distance = 0.85,corner_count = 10,threshold=0.07)},
-            {MISSIONMODES.loiter      :      LoiterParams(loiter_time = 1)},
+            {MISSIONMODES.navigation  :      NavigationParams(agressiveness_kt = 30 ,max_velocity = 1, navigation_waypoints = [Position(1,1,1)], threshold = 0.08)},
+            {MISSIONMODES.formation2D :      FormationParams2D(formation_type = FORMATIONTYPES.v,each_distance = 0.65,corner_count = 4,threshold=0.07)},
+            {MISSIONMODES.loiter      :      LoiterParams(loiter_time = 3)},
         
             {MISSIONMODES.landing     :      LandingParams(threshold = 0.07)},
 
             {MISSIONMODES.completed   :      True}
             
             ]
-
 
 #Initialize ModesClass
 start_time = time.time()

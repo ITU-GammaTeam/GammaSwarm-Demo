@@ -4,7 +4,7 @@ import os
 cwd =os.path.dirname(os.path.realpath(__file__))
 slashes = [n for (n,e) in enumerate(cwd) if e=='/'] 
 relName = cwd[:slashes[3]] 
-mainsysTarget = "/minSnap-CrazyFlie2.1/src/GammaSwarm/src/GammaSwarm/mainSystem"
+mainsysTarget = "/GammaSwarm-Demo/src/GammaSwarm/src/GammaSwarm/mainSystem"
 sys.path.append(relName + mainsysTarget)
 
 
