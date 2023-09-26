@@ -51,7 +51,7 @@ git clone https://github.com/ITU-GammaTeam/GammaSwarm-Demo.git
 Then run the `catkin_make` command at main directory.
 
 ```
-cd GammaSwarm
+cd GammaSwarm-Demo
 catkin_make
 ```
 
@@ -64,7 +64,7 @@ pip3 install -e .
 Go the main directory catkin_ws and do `catkin_make`
 ```
 cd 
-cd catkin_ws/GammaSwarm
+cd catkin_ws/GammaSwarm-Demo
 catkin_make
 ```
 
@@ -80,8 +80,10 @@ source /opt/ros/noetic/setup.bash
 
 And add this two line you last line of .bashrc file:
 ```
-source /home/Your_Computer_username/catkin_ws/GammaSwarm/devel/setup.bash
+source /home/Your_Computer_username/catkin_ws/GammaSwarm-Demo/devel/setup.bash
 ```
+
+After that close current terminal and open new terminal.
 
 
 # NOT: BURAYA SİMULASYON GIFI EKLENECEK STARTING SYSTEM ALTINA
@@ -89,6 +91,7 @@ source /home/Your_Computer_username/catkin_ws/GammaSwarm/devel/setup.bash
 
 
 ## Starting System
+
 For V1.0 of system, you can use this 1 line code (After Setup Process you can do this):
 
 ```
@@ -105,7 +108,90 @@ src/GammaSwarm/src/GammaSwarm/mainSystem/Parameters.py
 src/GammaSwarm/src/GammaSwarm/simulationSystems/SimulationParameter.py
 ```
 
+### Example
+
+Bu başlık altında basit bir görev oluşturma örneği bulacaksınız. Her parametrenin nerede kullanıldığı ile alakalı ayrıntılı bilgi için lütfen wiki'yi inceleyiniz.
+Yapmak istediğimiz görevin isterleri şunlar olsun. Elimizde bulunan 4 adet hava aracını 1 metre yüksekliğe kaldırıp havada iki boyutlu V şeklinde bir formasyon almasını istiyoruz. Bu formasyon alındıktan sonra formasyonu koruyarak belli 1 noktaya navigasyon yapılması istenmektedir. Bu görevleri tamamladıktan sonra ise hava araçlarının inişi gerçekleştirilir. 
+
+###### NOTE
+
+Her navigasyon öncesi sürünün bir formasyon şeklinde bulunması uçuş düzeni açısından çok önemlidir, formasyona girilmeden sürü halinde navigasyon yapılması tavsiye edilmez. Hava aracının tek başına navigasyon yapmasını istiyorsanız lütfen [Individual Navigation](https://github.com/imamim/minSnap-CrazyFlie2.1) kaynağına bakınız **:heavy_exclamation_mark:**
+
+#### Mode List
+
+```
+modeList = [
+            #TODO Simulation does not work with 1 agent, this mainSystem can work 1 drone but we have problem at simulation. Can't render drone.
+            #For information of parameters pls look at Parameters.py
+            {MISSIONMODES.initialize  :      InitializerParams(number_of_agent = 4,simulation_enabled = True,real_enabled = False, starting_formation = FORMATIONTYPES.common, area_dimension = [(-1.6, 1.6), (-1.9, 1.9), (0, 1.5)])},
+            
+            {MISSIONMODES.take_off    :      TakeoffParams(takeoff_height = 1.0 ,threshold = 0.08)} , 
+            {MISSIONMODES.loiter      :      LoiterParams(loiter_time = 3)} ,
+
+            {MISSIONMODES.formation2D :      FormationParams2D(formation_type = FORMATIONTYPES.v,each_distance = 0.65,corner_count = 10,threshold=0.07)},
+            {MISSIONMODES.loiter      :      LoiterParams(loiter_time = 3)},
+            
+            {MISSIONMODES.navigation  :      NavigationParams(agressiveness_kt = 30 ,max_velocity = 1, navigation_waypoints = [Position(1,1,1)], threshold = 0.08)},
+            {MISSIONMODES.formation2D :      FormationParams2D(formation_type = FORMATIONTYPES.v,each_distance = 0.65,corner_count = 10,threshold=0.07)},
+            {MISSIONMODES.loiter      :      LoiterParams(loiter_time = 3)},
+        
+            {MISSIONMODES.landing     :      LandingParams(threshold = 0.07)},
+
+            {MISSIONMODES.completed   :      True}
+            
+            ]
+```
+
+#### Walkthrough without GUI for V1:
+
+- Initialize modu zaten başlangıçta kodun içerisinde olacaktır. Bu mode her zaman listenin başında olmalı ve sadece paremetreleri düzenlenmelidir.
+
+- Uçuşumuzu sadece simülasyon ortamında yapmak istiyorsak (```simulation_enabled = True``` , ```real_enabled = False``` )
+  
+- Uçuşumuzu sadece gerçek ortamında yapmak istiyorsak (```simulation_enabled = False``` , ```real_enabled = True``` )
+  
+- Hem gerçek hem simülasyon ortamının aynı anda çalıştığı durum implemente edilmemiştir **:heavy_exclamation_mark:**
+  
+- 4 tane hava aracımız bulunsun (```number_of_agent = 4```)
+  
+- Başlangıç formasyonunun common olarak kalmalıdır. (```starting_formation = FORMATIONTYPES.common```)
+  
+- Alan ölçülerinin bir önemi yoktur! Başka görevlerde kullanılmak üzere sadece input olarak alınmaktadır. **:heavy_exclamation_mark:**
+  
+- Takeoff modunu listeye ekleyelim: ```{MISSIONMODES.take_off : TakeoffParams(takeoff_height = 0.7 ,threshold = 0.08)} , ```
+  
+- Araçların hepsinin 1 metre yukarıya kalkmasını istiyoruz. (```takeoff_height = 1.0```)
+  
+- Her mod arasına bir loiter eklenmelidir. Loiter zamanı çok fazla küçük olmadığı sürece istenilen değere ayarlanılabilir. ```{MISSIONMODES.loiter : LoiterParams(loiter_time = 3)} ,```
+  
+- Artık kalkış bitti ve formasyona girebiliriz.  ```{MISSIONMODES.formation2D : FormationParams2D(formation_type = FORMATIONTYPES.v,each_distance = 0.65,corner_count = 10,threshold=0.07)} ,```
+  
+- Formasyon tipimizi, her hava aracı arasında bulunması istenen mesafe (köşeler veya noktalar arası mesafe, köşegen mesafesi değil) değerinin ayarlanması bu görev için yeterlidir. Ayrıntılı açıklamalar için wiki'ye göz atabilirsiniz. (```formation_type = FORMATIONTYPES.v``` , ```each_distance = 0.65``` )
+  
+- Belli miktarda loiter eklenir. ```{MISSIONMODES.loiter : LoiterParams(loiter_time = 3)} ,```
+  
+- Artık araçlar stabil duruma geçtikten sonra navigasyon hareketine başlanılabilir. Gidilmesi istenen nokta
+
+  **:round_pushpin:** [x = 1 meter , y = 1 meter , z = 1 meter] -> ```navigation_waypoints = [Position(1,1,1)]```
+
+  Navigasyon sırasında sürü merkezinin maksimum hızı 1 [m/s] olacaktır.
+  Formasyon çeşidi de hangi formasyonda isek o olmalıdır (```FORMATIONTYPES.v```) ve aralarındaki mesafe aynı kalmalıdır (```each_distance = 0.65```): 
+  
+  **:one:** ```{MISSIONMODES.navigation : NavigationParams(agressiveness_kt = 30 ,max_velocity = 1, navigation_waypoints = [Position(1,1,1)], threshold = 0.08)},```
+  
+  **:two:** ```{MISSIONMODES.formation2D : FormationParams2D(formation_type = FORMATIONTYPES.v,each_distance = 0.65,corner_count = 10,threshold=0.07)},```
+  
+  **:three:** ```{MISSIONMODES.loiter : LoiterParams(loiter_time = 3)},```
+
+- Ardından son olarak landing yapılmalıdır. ```MISSIONMODES.landing : LandingParams(threshold = 0.07)},```
+  
+- Görevin bittiğinin sistem tarafından anlaşılması için şu görev de eklenmelidir. ```{MISSIONMODES.completed : True}```
+  
+Bütün görevlerdeki threshold değerlerinin konuya hakim değilseniz değiştirilmesi tavsiye edilmez. Hepsi deneysel testlerden sonrası uygun bir değere sabitlenmiştir. Büyük oranda bir hata ile karşılaşmayacaksınızdır.
+
+
 ## Developing
+
 Bu kısım Türkçe anlatılacaktır!
 
 GammaSwarm System V1.0 için düzenlenebilinecek şeyler şunlardır:
