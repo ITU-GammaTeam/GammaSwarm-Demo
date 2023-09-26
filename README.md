@@ -160,47 +160,69 @@ modeList = [
 
 - Initialize mode will already be in the main source code. This mode should always be at the top of the list and only its parameters should be edited.
 
-- If we want to make our flight only in a simulation environment (```simulation_enabled = True``` , ```real_enabled = False```)
+- If we want to make our flight only in a simulation environment
+
+  (```simulation_enabled = True``` , ```real_enabled = False```)
   
-- If we want to make our flight only in its real application (```simulation_enabled = False``` , ```real_enabled = True```)
+- If we want to make our flight only in its real application
+
+  (```simulation_enabled = False``` , ```real_enabled = True```)
   
   **:heavy_exclamation_mark:** The situation where both real and simulation environments work simultaneously has not been implemented. 
   
 - Let's have 4 aircraft (```number_of_agent = 4```)
   
-- The starting formation must remain common. (```starting_formation = FORMATIONTYPES.common```)
+- The starting formation must remain common.
+
+  (```starting_formation = FORMATIONTYPES.common```)
   
   **:heavy_exclamation_mark:** Area dimensions does not matter! It is taken only as input to be used in other tasks. 
   
-- Let's add Takeoff mode to the list ```{MISSIONMODES.take_off : TakeoffParams(takeoff_height = 0.7 ,threshold = 0.08)} , ```
+- Let's add Takeoff mode to the list
   
-- We want all vehicles to take off 1 meter above the ground. (```takeoff_height = 1.0```)
+  ```{MISSIONMODES.take_off : TakeoffParams(takeoff_height = 0.7 ,threshold = 0.08)} , ```
   
-- A loiter should be added between each mode. Loiter time can be adjusted to the desired value as long as it is not too small. ```{MISSIONMODES.loiter : LoiterParams(loiter_time = 3)} ,```
+- We want all vehicles to take off 1 meter above the ground.
+
+  (```takeoff_height = 1.0```)
   
-- Now the takeoff is over and we can get into formation.  ```{MISSIONMODES.formation2D : FormationParams2D(formation_type = FORMATIONTYPES.v,each_distance = 0.65,corner_count = 4,threshold=0.07)} ,```
+- A loiter should be added between each mode. Loiter time can be adjusted to the desired value as long as it is not too small.
+
+  ```{MISSIONMODES.loiter : LoiterParams(loiter_time = 3)} ,```
   
-- Some parameters need to be adjusted so that our formation type, the distance between each aircraft (distance between corners or points, not diagonal distance) and the number of corners are equal to the number of vehicles. You can check out the wiki for detailed explanations. (```formation_type = FORMATIONTYPES.v``` , ```each_distance = 0.65``` )
+- Now the takeoff is over and we can get into formation.
+
+  ```{MISSIONMODES.formation2D : FormationParams2D(formation_type = FORMATIONTYPES.v,each_distance = 0.65,corner_count = 4,threshold=0.07)} ,```
   
-- A certain amount of loiter is added. ```{MISSIONMODES.loiter : LoiterParams(loiter_time = 3)} ,```
+- Some parameters need to be adjusted so that our formation type, the distance between each aircraft (distance between corners or points, not diagonal distance) and the number of corners are equal to the number of vehicles. You can check out the wiki for detailed explanations.
+
+  (```formation_type = FORMATIONTYPES.v``` , ```each_distance = 0.65``` )
+  
+- A certain amount of loiter is added.
+
+  ```{MISSIONMODES.loiter : LoiterParams(loiter_time = 3)} ,```
   
 - Navigation can now begin after the vehicles become stable. Desired destination:
 
-  **:round_pushpin:** [x = 1 meter , y = 1 meter , z = 1 meter] -> ```navigation_waypoints = [Position(1,1,1)]```
+  - **:round_pushpin:** [x = 1 meter , y = 1 meter , z = 1 meter] -> ```navigation_waypoints = [Position(1,1,1)]```
 
-  The maximum speed of the swarm center during navigation will be 1 [m/s].
+  - The maximum speed of the swarm center during navigation will be 1 [m/s].
   
-  The formation type should be the same as the formation we are in (```FORMATIONTYPES.v```) and the distance between them should remain the same (```each_distance = 0.65```): 
+  - The formation type should be the same as the formation we are in (```FORMATIONTYPES.v```) and the distance between them should remain the same (```each_distance = 0.65```): 
   
-  **:one:** ```{MISSIONMODES.navigation : NavigationParams(agressiveness_kt = 30 ,max_velocity = 1, navigation_waypoints = [Position(1,1,1)], threshold = 0.08)},```
+  - **:one:** ```{MISSIONMODES.navigation : NavigationParams(agressiveness_kt = 30 ,max_velocity = 1, navigation_waypoints = [Position(1,1,1)], threshold = 0.08)},```
   
-  **:two:** ```{MISSIONMODES.formation2D : FormationParams2D(formation_type = FORMATIONTYPES.v,each_distance = 0.65,corner_count = 4,threshold=0.07)},```
+  - **:two:** ```{MISSIONMODES.formation2D : FormationParams2D(formation_type = FORMATIONTYPES.v,each_distance = 0.65,corner_count = 4,threshold=0.07)},```
   
-  **:three:** ```{MISSIONMODES.loiter : LoiterParams(loiter_time = 3)},```
+  - **:three:** ```{MISSIONMODES.loiter : LoiterParams(loiter_time = 3)},```
 
-- Then, finally, landing should be done. ```MISSIONMODES.landing : LandingParams(threshold = 0.07)},```
+- Then, finally, landing should be done.
+
+  ```MISSIONMODES.landing : LandingParams(threshold = 0.07)},```
   
-- The following task should also be added so that the system understands that the task is completed. ```{MISSIONMODES.completed : True}```
+- The following task should also be added so that the system understands that the task is completed.
+
+  ```{MISSIONMODES.completed : True}```
   
 **:warning:** It is not recommended to change the threshold values in all tasks unless you are familiar with the subject. All of them were fixed to a suitable value after experimental tests. Most of the time you will not encounter any errors.
 
