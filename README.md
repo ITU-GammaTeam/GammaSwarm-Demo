@@ -166,7 +166,7 @@ modeList = [
   
 - Artık kalkış bitti ve formasyona girebiliriz.  ```{MISSIONMODES.formation2D : FormationParams2D(formation_type = FORMATIONTYPES.v,each_distance = 0.65,corner_count = 4,threshold=0.07)} ,```
   
-- Formasyon tipimizi, her hava aracı arasında bulunması istenen mesafe (köşeler veya noktalar arası mesafe, köşegen mesafesi değil) değerinin ayarlanması bu görev için yeterlidir. Ayrıntılı açıklamalar için wiki'ye göz atabilirsiniz. (```formation_type = FORMATIONTYPES.v``` , ```each_distance = 0.65``` )
+- Formasyon tipimizi, her hava aracı arasında bulunması istenen mesafe (köşeler veya noktalar arası mesafe, köşegen mesafesi değil) ve köşe sayısı araç sayısına eşit olacak şekilde ayarlamalar yapılmalıdır. Ayrıntılı açıklamalar için wiki'ye göz atabilirsiniz. (```formation_type = FORMATIONTYPES.v``` , ```each_distance = 0.65``` )
   
 - Belli miktarda loiter eklenir. ```{MISSIONMODES.loiter : LoiterParams(loiter_time = 3)} ,```
   
