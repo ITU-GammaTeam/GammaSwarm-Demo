@@ -17,7 +17,7 @@ with _CrazyFlie 2.1_ drones. It is open to development and its usability has bee
 
 
 **Or you can look Teknofest 2023 Heterogeneous Swarm Robots Competition _[Project Report](https://drive.google.com/file/d/1Wdwlqqi9w5jY0oGLyqyqK5ytAj6Xoze8/view?usp=sharing)_ 
-at :two:nd place team:heavy_exclamation_mark:**
+at :two:'nd place team:heavy_exclamation_mark:**
 
 ## Installation
 
@@ -229,23 +229,35 @@ modeList = [
 
 ## Developing
 
+Feel free to open an issue for development activities or ask any questions you want in the discussion section. **In the Issue tab you will always find a pinned topic related to the tasks that need to be done!**
 
-
-## References
+### References
 <a id="1">[1]</a> 
-EKLENECEK.
+Simulation Environment with some arrangements : https://github.com/utiasDSL/gym-pybullet-drones
 
 <a id="2">[2]</a> 
-EKLENECEK.
+For Real Flight Implementation we are use cflib-python : https://github.com/bitcraze/crazyflie-lib-python
 
 <a id="3">[3]</a> 
-EKLENECEK.
+The Trajectory generation algorithm was written using this source : https://github.com/Bharath2/Quadrotor-Simulation
 
-## PyBullet 
-https://github.com/utiasDSL/gym-pybullet-drones 
+<a id="4">[4]</a> 
+Brambilla, M., Ferrante, E., Birattari, M., & Dorigo, M. (2013). Swarm robotics: a review from the swarm
+engineering perspective. Swarm Intelligence, 7(1), 1–41. https://doi.org/10.1007/s11721-012-0075-2
 
-## PIP 
-https://pip.pypa.io/en/stable/ 
+<a id="5">[5]</a> 
+Mellinger, D., & Kumar, V. (2011). Minimum snap trajectory generation and control for quadrotors. 2011
+IEEE International Conference on Robotics and Automation. https://doi.org/10.1109/icra.2011.5980409
+
+<a id="6">[6]</a> 
+Moon, S., Lee, D., Lee, D., Kim, D., & Bang, H. (2021). Energy-Efficient Swarming Flight Formation
+Transitions Using the Improved Fair Hungarian Algorithm. Sensors, 21(4), 1260.
+https://doi.org/10.3390/s21041260
+
+<a id="7">[**7**]</a> 
+Implemented for both Individual and Swarm Navigation Flight : **Richter, C., Bry, A., & Roy, N. (2016). Polynomial trajectory planning for aggressive quadrotor flight in dense indoor environments. Springer Tracts in Advanced Robotics, 649–666. https://doi.org/10.1007/978-3-319-28872-7_37**
+
+
 
 ### General Use
 --> Use launch files to configure standardized packages 
@@ -253,11 +265,9 @@ https://pip.pypa.io/en/stable/
 --> Do not use any recursive or try-expect function 
 
 --> After every Ros dependent change (msg,service vs.), do the catkin_make at main dir
+ 
 
---> Before every push, make sure that you did pull 
-
-
-### General Structure
+### General Repository Structure
 ```bash
 Gamma Swarm
 ├── CMakeLists.txt
