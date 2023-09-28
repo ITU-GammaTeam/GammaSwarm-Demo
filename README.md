@@ -179,7 +179,7 @@ self.uris = [
                      ] #TODO degisecek
 ```
 
-[cflib-python](https://github.com/bitcraze/crazyflie-lib-python) referenced below uses a structure called URI to connect to drones. For more detailed information, please review [User-Guide](https://www.bitcraze.io/documentation/repository/crazyflie-clients-python/master/userguides/userguide_client/).
+[cflib-python](https://github.com/bitcraze/crazyflie-lib-python) referenced below uses a structure called URI to connect to drones. For more detailed information, please review [User Guide](https://www.bitcraze.io/documentation/repository/crazyflie-clients-python/master/userguides/userguide_client/).
 
 The format that the library mentioned above uses for URI's :
 
