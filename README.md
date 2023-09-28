@@ -19,6 +19,15 @@ with _CrazyFlie 2.1_ drones. It is open to development and its usability has bee
 **Or you can look Teknofest 2023 Heterogeneous Swarm Robots Competition _[Project Report](https://drive.google.com/file/d/1Wdwlqqi9w5jY0oGLyqyqK5ytAj6Xoze8/view?usp=sharing)_ 
 at :two:'nd place team:heavy_exclamation_mark:**
 
+_Real Flight Test videos will be uploaded soon!_
+
+## Note to Developers
+
+**:ok:** After our tests, we guarantee that the real flight and simulation behavior will be largely similar. For this reason, do not hesitate to develop algorithms on simulation. 
+
+**:warning:** However, if you make changes to the system (ROS messages, Loop Hz, simulation systems), we cannot guarantee this situation. If you are not a good developer, it is not recommended to make changes to RealSystems and SimulationSystems!
+
+
 ## Installation
 
 ### Dependencies
