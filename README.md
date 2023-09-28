@@ -165,6 +165,46 @@ modeList = [
             ]
 ```
 
+#### How to Real Flight with URI's ?
+
+First open ```src/GammaSwarm/src/GammaSwarm/realSystems/realManager.py``` -> [Line of codes for URI's of CrazyFlies](https://github.com/ITU-GammaTeam/GammaSwarm-Demo/blob/b16633cfc41866130fba603b62c4b78a50fc8771/src/GammaSwarm/src/GammaSwarm/realSystems/realManager.py#L34-L40)
+
+```
+self.uris = [
+                     "radio://0/125/2M/E7E7E7E7C1",
+                     "radio://0/125/2M/E7E7E7E7C2",
+                     "radio://1/115/2M/E7E7E7E7C3",
+                     "radio://1/115/2M/E7E7E7E7C4",
+                     "radio://2/105/2M/E7E7E7E7C9"
+                     ] #TODO degisecek
+```
+
+[cflib-python](https://github.com/bitcraze/crazyflie-lib-python) referenced below uses a structure called URI to connect to drones. For more detailed information, please review [User-Guide](https://www.bitcraze.io/documentation/repository/crazyflie-clients-python/master/userguides/userguide_client/).
+
+The format that the library mentioned above uses for URI's :
+
+```
+"radio://dongle_id/channel/radio_bandwith/E7E7E7E7hex_number_of_id"
+```
+
+- ******_dongle_id_****** : It is assigned automatically, does not require any settings. Only the channel of the devices assigned for each _dongle_id_ must be the same.
+  
+- ******_channel_****** : It is the channel value you assign to the drone via cfclient. Between each _dongle_ the channel should be reduced by 10's. (125,115,105...)
+  
+- ******_radio_bandwith_****** : It is the communication bandwidth of the vehicle. Normally it can be edited via cfclient. However, making changes is not recommended. (2 Mbit/s)
+  
+- ******_hex_number_of_id_****** : It corresponds to the last 2 digits of the address that identifies the vehicle. These last two digits must be the _hex_ equivalent of a _decimal_ number you want. It can be continued by starting from _C1_. 
+
+Points to be taken into consideration are as follows:
+
+1. Healthy results were obtained when 2 drones were assign into each CrazyRadio Dongle.
+  
+1. Set the channel and URI settings for your drones so that there are 2 drones for each channel, with the channel value starting from 125!
+
+
+Edit the CrazyFlie2.1 URI's and channels you will use, paying attention to the necessary points. Then, when you integrate these into the [code](https://github.com/ITU-GammaTeam/GammaSwarm-Demo/blob/b16633cfc41866130fba603b62c4b78a50fc8771/src/GammaSwarm/src/GammaSwarm/realSystems/realManager.py#L34-L40), you can perform the real flight. Your flight will start 10 seconds after initializing the code **:warning:  🚀**
+
+
 #### Walkthrough without GUI for V1:
 
 - Initialize mode will already be in the main source code. This mode should always be at the top of the list and only its parameters should be edited.
