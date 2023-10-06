@@ -138,7 +138,7 @@ _Open ```src/GammaSwarm/src/GammaSwarm/mainSystem/mission.py ```_
 
 ###### NOTE
 
-It is very important for the flight order that the swarm forms a formation before each navigation. Navigation without entering the formation is not recommended. If you want the aircraft to navigate on its own, please see the [Individual Navigation](https://github.com/imamim/minSnap-CrazyFlie2.1) resource **:heavy_exclamation_mark:**
+It is very important for the flight order that the swarm forms a formation before each navigation. Navigation without entering the formation is not recommended. If you want the aircraft to navigate on its own, please see the [Individual Navigation](https://github.com/imamim/minSnap-CrazyFlie2.1) repository **:heavy_exclamation_mark:**
 
 #### Mode List
 
