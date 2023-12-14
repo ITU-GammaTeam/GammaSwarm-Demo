@@ -17,7 +17,7 @@ with _CrazyFlie 2.1_ drones. It is open to development and its usability has bee
 
 
 **Or you can look Teknofest 2023 Heterogeneous Swarm Robots Competition _[Project Report](https://drive.google.com/file/d/1Wdwlqqi9w5jY0oGLyqyqK5ytAj6Xoze8/view?usp=sharing)_ 
-at :two:'nd place team:heavy_exclamation_mark:**
+at 2️⃣'nd place team ❗**
 
 _Real Flight Test videos will be uploaded soon!_
 
