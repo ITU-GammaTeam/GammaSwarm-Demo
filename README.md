@@ -132,7 +132,7 @@ src/GammaSwarm/src/GammaSwarm/simulationSystems/SimulationParameter.py
 
 You will find a simple example of creating a mission under this heading. For detailed information about where each parameter is used, please review the wiki. (Or create discussion)
 
-Let the requirements of the task we want to do be as follows. Let's say we have 4 aircraft. We want to lift these vehicles to a height of 1 meter and form them into a two-dimensional V-shaped formation in the air. After this formation is taken, it is desired to navigate to a certain point while preserving the formation. After completing these tasks, the aircraft land.
+Let the requirements of the task we want to do be as follows. Let's say we have 4 drone. We want to lift these vehicles to a height of 1 meter and form them into a two-dimensional V-shaped formation in the air. After this formation is taken, it is desired to navigate to a certain point while preserving the formation. After completing these tasks, the aircraft land.
 
 _Open ```src/GammaSwarm/src/GammaSwarm/mainSystem/mission.py ```_
 
